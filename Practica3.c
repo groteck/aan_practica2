@@ -58,36 +58,65 @@ int main() {
         P01 = 1000;
         C01 = 100;
         dt1 = 0.1;
+
 	LotkaVolterra (a1, b1, d1, e1, f1, P01, C01, Presa1, Cazador1, dt1, NIter1);
 
+        a2 = 0.5;
+        b2 = 0.00005;
+        d2 = 0.0001;
+        e2 = 0.06;
+        f2 = 0.00015;
+        P02 = 1000;
+        C02 = 100;
+        dt2 = 0.1;
+
 	LotkaVolterra (a2, b2, d2, e2, f2, P02, C02, Presa2, Cazador2, dt2, NIter2);
+
+        a3 = 0.5;
+        b3 = 0.00005;
+        d3 = 0.0001;
+        e3 = 0.06;
+        f3 = 0.00015;
+        P03 = 1000;
+        C03 = 100;
+        dt3 = 0.1;
+
 	LotkaVolterra (a3, b3, d3, e3, f3, P03, C03, Presa3, Cazador3, dt3, NIter3);
+        a4 = 0.5;
+        b4 = 0.00005;
+        d4 = 0.0001;
+        e4 = 0.06;
+        f4 = 0.00015;
+        P04 = 1000;
+        C04 = 100;
+        dt4 = 0.1;
+
 	LotkaVolterra (a4, b4, d4, e4, f4, P04, C04, Presa4, Cazador4, dt4, NIter4);
 
 	FILE *fp1;
+	FILE *fp2;
+	FILE *fp3;
+	FILE *fp4;
         fp1 = fopen ( "equilibrio.txt", "w+" );
         for (i = 0; i < NIter1; i++) {
              fprintf(fp1, "i, %s, %s \n", i, Presa1[i], Cazador1[i]);
         }
-        fputs( cadena1, fp1 );
         fclose( fp1 );
 
-	FILE *fp2;
-	char cadena2[] = "%s, %s \n", Presa2, Cazador2;
-        fp2 = fopen ( "depre-muertos.txt", "r+" );
-        fputs( cadena2, fp2 );
-        fclose ( fp2 );
+        for (i = 0; i < NIter2; i++) {
+             fprintf(fp2, "i, %s, %s \n", i, Presa2[i], Cazador2[i]);
+        }
 
-	FILE *fp3;
-	char cadena3[] = "%s, %s \n", Presa3, Cazador3;
-        fp3 = fopen ( "muertos.txt", "r+" );
-        fputs( cadena3, fp3 );
+        fclose ( fp2 );
+        for (i = 0; i < NIter3; i++) {
+             fprintf(fp3, "i, %s, %s \n", i, Presa3[i], Cazador3[i]);
+        }
+
         fclose ( fp3 );
 
-	FILE *fp4;
-	char cadena4[] = "%s, %s \n", Presa4, Cazador4;
-        fp4 = fopen ( "grndes.txt", "r+" );
-        fputs( cadena4, fp4 );
+        for (i = 0; i < NIter4; i++) {
+             fprintf(fp4, "i, %s, %s \n", i, Presa4[i], Cazador4[i]);
+        }
         fclose ( fp4 );
         return 0;
 }
