@@ -33,11 +33,11 @@ void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
         if(Cact < 0.5){
                 Cact=0;
         };
-        Pant = Pact;
-        Cant = Cact;
+        Pant = roundf(Pact);
+        Cant = roundf(Cact);
         i++;
-	Presa[i] = Pact;
-	Cazador[i] = Cact;
+	Presa[i] = roundf(Pact);
+	Cazador[i] = roundf(Cact);
     }
 };
 
