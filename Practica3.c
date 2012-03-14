@@ -15,11 +15,11 @@ void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
     Pact = Pant +(dt*((a-(b*Pant)-(d*Cant))*Pant));
     if(Pact < 0.5){
        Pact=0;
-    };
+    }
     Cact = Cant +(dt*((-e+(f*Pant))*Cant));
     if(Cact < 0.5){
         Cact=0;
-    };
+    }
     Pant = Pact;
     Cant = Cact;
 
