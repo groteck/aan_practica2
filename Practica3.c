@@ -99,23 +99,27 @@ int main() {
 	FILE *fp4;
         fp1 = fopen ( "equilibrio.txt", "w+" );
         for (i = 0; i < NIter1; i++) {
-             fprintf(fp1, "%d, %f, %f \n", i, Presa1[i], Cazador1[i]);
+             	fprintf(fp1, "%d, %f, %f \n", i, Presa1[i], Cazador1[i]);
         }
         fclose( fp1 );
 
+        fp2 = fopen ( "mueren-depredadores.txt", "w+" );
         for (i = 0; i < NIter2; i++) {
-             fprintf(fp2, "i, %s, %s \n", i, Presa2[i], Cazador2[i]);
+		fprintf(fp2, "%d, %f, %f \n", i, Presa2[i], Cazador2[i]);
         }
 
         fclose ( fp2 );
+
+        fp3 = fopen ( "mueren-todos.txt", "w+" );
         for (i = 0; i < NIter3; i++) {
-             fprintf(fp3, "i, %s, %s \n", i, Presa3[i], Cazador3[i]);
+             fprintf(fp3, "%d, %f, %f \n", i, Presa3[i], Cazador3[i]);
         }
 
         fclose ( fp3 );
 
+        fp4 = fopen ( "valores-grandes.txt", "w+" );
         for (i = 0; i < NIter4; i++) {
-             fprintf(fp4, "i, %s, %s \n", i, Presa4[i], Cazador4[i]);
+             fprintf(fp4, "%d, %f, %f \n", i, Presa4[i], Cazador4[i]);
         }
         fclose ( fp4 );
         return 0;
