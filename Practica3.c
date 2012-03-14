@@ -41,42 +41,42 @@ void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
 
 int main() {
         int i;
-	int NIter1 = 2000;
+	int NIter1 = 200;
 	float a1, b1, d1, e1, f1, P01, C01, Presa1[NIter1], Cazador1[NIter1], dt1;
-	int NIter2 = 2000;
+	int NIter2 = 200;
 	float a2, b2, d2, e2, f2, P02, C02, Presa2[NIter2], Cazador2[NIter2], dt2;
-	int NIter3 = 2000;
+	int NIter3 = 200;
 	float a3, b3, d3, e3, f3, P03, C03, Presa3[NIter3], Cazador3[NIter3], dt3;
-	int NIter4 = 2000;
+	int NIter4 = 200;
 	float a4, b4, d4, e4, f4, P04, C04, Presa4[NIter4], Cazador4[NIter4], dt4;
 
         a1 = 0.5;
-        b1 = 0.00005;
+        b1 = 0.0015;
         d1 = 0.0001;
-        e1 = 0.06;
-        f1 = 0.00015;
+        e1 = 0.2;
+        f1 = 0.0002;
         P01 = 1000;
         C01 = 100;
         dt1 = 0.1;
 
 	LotkaVolterra (a1, b1, d1, e1, f1, P01, C01, Presa1, Cazador1, dt1, NIter1);
 
-        a2 = 0.5;
-        b2 = 0.00005;
+        a2 = 0.1;
+        b2 = 0.005;
         d2 = 0.0001;
-        e2 = 0.06;
-        f2 = 0.00015;
+        e2 = 0.2;
+        f2 = 0.0002;
         P02 = 1000;
         C02 = 100;
         dt2 = 0.1;
 
 	LotkaVolterra (a2, b2, d2, e2, f2, P02, C02, Presa2, Cazador2, dt2, NIter2);
 
-        a3 = 0.5;
-        b3 = 0.00005;
+        a3 = 0.1;
+        b3 = 0.01;
         d3 = 0.0001;
-        e3 = 0.06;
-        f3 = 0.00015;
+        e3 = 0.1;
+        f3 = 0.001;
         P03 = 1000;
         C03 = 100;
         dt3 = 0.1;
@@ -89,7 +89,7 @@ int main() {
         f4 = 0.00015;
         P04 = 1000;
         C04 = 100;
-        dt4 = 0.1;
+        dt4 = 1;
 
 	LotkaVolterra (a4, b4, d4, e4, f4, P04, C04, Presa4, Cazador4, dt4, NIter4);
 
