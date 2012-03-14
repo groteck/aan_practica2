@@ -6,7 +6,7 @@
 #include <string.h>
 
 void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
-float C0, float  *Presa, float *Cazador, float dt, int NIter){
+                   float C0, float  *Presa, float *Cazador, float dt, int NIter){
     float Pant = P0, Pact, Cant = C0, Cact;
     int i=0;
 
@@ -42,6 +42,7 @@ float C0, float  *Presa, float *Cazador, float dt, int NIter){
 };
 
 int main() {
+        int i;
 	int NIter1 = 2000;
 	float a1, b1, d1, e1, f1, P01, C01, Presa1[NIter1], Cazador1[NIter1], dt1;
 	int NIter2 = 2000;
@@ -50,15 +51,17 @@ int main() {
 	float a3, b3, d3, e3, f3, P03, C03, Presa3[NIter3], Cazador3[NIter3], dt3;
 	int NIter4 = 2000;
 	float a4, b4, d4, e4, f4, P04, C04, Presa4[NIter4], Cazador4[NIter4], dt4;
- 
+
 	LotkaVolterra (a1, b1, d1, e1, f1, P01, C01, Presa1, Cazador1, dt1, NIter1);
 	LotkaVolterra (a2, b2, d2, e2, f2, P02, C02, Presa2, Cazador2, dt2, NIter2);
 	LotkaVolterra (a3, b3, d3, e3, f3, P03, C03, Presa3, Cazador3, dt3, NIter3);
 	LotkaVolterra (a4, b4, d4, e4, f4, P04, C04, Presa4, Cazador4, dt4, NIter4);
 
 	FILE *fp1;
-	char cadena1[] = "%s, %s \n", Presa1, Cazador1;
-        fp1 = fopen ( "equilibrio.txt", "r+" );
+        fp1 = fopen ( "equilibrio.txt", "w+" );
+        for (i = 0; i < NIter1; i++) {
+             fprintf(fp1, "%s, %s \n", Presa1[i], Cazador1[i]);
+        }
         fputs( cadena1, fp1 );
         fclose ( fp1 );
 
