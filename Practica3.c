@@ -23,7 +23,7 @@ void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
     Pant = Pact;
     Cant = Cact;
 
-    while((i<NIter)&& (Pact > 0.5) && (Cact > 0.5)){
+    while(i<NIter){
 
         Pact = Pant +(dt*((a-(b*Pant)-(d*Cant))*Pant));
         if(Pact < 0.5){
