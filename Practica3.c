@@ -60,7 +60,6 @@ int main() {
         P01 = 1000;
         C01 = 100;
         dt1 = 0.1;
-        NIter1 = 5000;
 	LotkaVolterra (a1, b1, d1, e1, f1, P01, C01, Presa1, Cazador1, dt1, NIter1);
 
 	LotkaVolterra (a2, b2, d2, e2, f2, P02, C02, Presa2, Cazador2, dt2, NIter2);
