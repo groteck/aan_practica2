@@ -52,7 +52,17 @@ int main() {
 	int NIter4 = 2000;
 	float a4, b4, d4, e4, f4, P04, C04, Presa4[NIter4], Cazador4[NIter4], dt4;
 
+        a1 = 0.5;
+        b1 = 0.00005;
+        d1 = 0.0001;
+        e1 = 0.06;
+        f1 = 0.00015;
+        P01 = 1000;
+        C01 = 100;
+        dt1 = 0.1;
+        NIter1 = 5000;
 	LotkaVolterra (a1, b1, d1, e1, f1, P01, C01, Presa1, Cazador1, dt1, NIter1);
+
 	LotkaVolterra (a2, b2, d2, e2, f2, P02, C02, Presa2, Cazador2, dt2, NIter2);
 	LotkaVolterra (a3, b3, d3, e3, f3, P03, C03, Presa3, Cazador3, dt3, NIter3);
 	LotkaVolterra (a4, b4, d4, e4, f4, P04, C04, Presa4, Cazador4, dt4, NIter4);
@@ -60,7 +70,7 @@ int main() {
 	FILE *fp1;
         fp1 = fopen ( "equilibrio.txt", "w+" );
         for (i = 0; i < NIter1; i++) {
-             fprintf(fp1, "%s, %s \n", Presa1[i], Cazador1[i]);
+             fprintf(fp1, "i, %s, %s \n", i, Presa1[i], Cazador1[i]);
         }
         fputs( cadena1, fp1 );
         fclose ( fp1 );
