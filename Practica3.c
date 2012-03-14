@@ -99,7 +99,7 @@ int main() {
 	FILE *fp4;
         fp1 = fopen ( "equilibrio.txt", "w+" );
         for (i = 0; i < NIter1; i++) {
-             fprintf(fp1, "i, %s, %s \n", i, Presa1[i], Cazador1[i]);
+             fprintf(fp1, "%d, %f, %f \n", i, Presa1[i], Cazador1[i]);
         }
         fclose( fp1 );
 
