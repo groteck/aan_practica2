@@ -8,7 +8,7 @@
 void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
                    float C0, float  *Presa, float *Cazador, float dt, int NIter){
     float Pant = P0, Pact, Cant = C0, Cact;
-    int i=0;
+    int i;
 
     Presa[0] = P0;
     Cazador[0] = C0;
@@ -23,23 +23,21 @@ void LotkaVolterra(float a, float b, float d, float e, float f, float P0,
     Pant = Pact;
     Cant = Cact;
 
-    while(i<NIter){
-
+    for (i = 0; i<NIter; i++) {
         Pact = Pant +(dt*((a-(b*Pant)-(d*Cant))*Pant));
         if(Pact < 0.5){
                 Pact=0;
-        };
+        }
         Cact = Cant +(dt*((-e+(f*Pant))*Cant));
         if(Cact < 0.5){
                 Cact=0;
-        };
+        }
         Pant = roundf(Pact);
         Cant = roundf(Cact);
-        i++;
-	Presa[i] = roundf(Pact);
-	Cazador[i] = roundf(Cact);
+	Presa[i] = Pant;
+	Cazador[i] = Cant;
     }
-};
+}
 
 int main() {
         int i;
@@ -72,7 +70,7 @@ int main() {
              fprintf(fp1, "i, %s, %s \n", i, Presa1[i], Cazador1[i]);
         }
         fputs( cadena1, fp1 );
-        fclose ( fp1 );
+        fclose( fp1 );
 
 	FILE *fp2;
 	char cadena2[] = "%s, %s \n", Presa2, Cazador2;
@@ -93,5 +91,3 @@ int main() {
         fclose ( fp4 );
         return 0;
 }
-
-
